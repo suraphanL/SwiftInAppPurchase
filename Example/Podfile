@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'SwiftInAppPurchase_Example', :exclusive => true do
+  pod "SwiftInAppPurchase", :path => "../"
+end
+
+target 'SwiftInAppPurchase_Tests', :exclusive => true do
+  pod "SwiftInAppPurchase", :path => "../"
+
+  
+end
