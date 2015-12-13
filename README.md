@@ -22,8 +22,75 @@ pod "SwiftInAppPurchase"
 
 ## Author
 
-Rawd, rpzzzzzz@hotmail.com
+Rawd, suraphan.d@gmail.com
 
 ## License
 
-SwiftInAppPurchase is available under the MIT license. See the LICENSE file for more info.
+SwiftInAppPurchase is available under the Apache 2.0 license. See the LICENSE file for more info.
+
+##Production Mode
+    SwiftInAppPurchase.sharedInstance.setProductionMode(false)
+
+##Request Products
+    var productIden = Set<String>()
+    productIden.insert("com.irawd.test.30d")
+
+    let iap = SwiftInAppPurchase.sharedInstance
+
+    iap.requestProducts(productIden) { (products, invalidIdentifiers, error) -> () in
+    
+    }
+
+##Purchase
+    let iap = SwiftInAppPurchase.sharedInstance
+    iap.addPayment("com.irawd.test.30d", userIdentifier: nil) { (result) -> () in
+
+        switch result{
+        case .Purchased(let productId,let transaction,let paymentQueue):
+
+            paymentQueue.finishTransaction(transaction)
+        case .Failed(let error):
+            print(error)
+        default:
+            break
+        }            
+    }
+
+##RefreshReceipt
+    let iap = SwiftInAppPurchase.sharedInstance
+    iap.refreshReceipt { (error) -> () in
+        print(error)
+    }
+##VerifyReceipt
+    let iap = SwiftInAppPurchase.sharedInstance
+    iap.verifyReceipt(nil) { (receipt, error) -> () in
+        print(receipt)
+        print(error)
+    }
+##Restore
+    let iap = SwiftInAppPurchase.sharedInstance
+    iap.restoreTransaction(nil) { (result) -> () in
+        switch result{
+        case .Restored(let productId,let transaction,let paymentQueue) :
+            
+            paymentQueue.finishTransaction(transaction)
+        case .Failed(let error):
+            print(error)
+
+        default:
+        break
+        }
+    }       
+##CheckIncompleteTransaction
+    let iap = SwiftInAppPurchase.sharedInstance
+    iap.checkIncompleteTransaction { (result) -> () in
+        switch result{
+        case .Purchased(let productId,let transaction,let paymentQueue):
+            paymentQueue.finishTransaction(transaction)
+        case .Restored(let productId,let transaction,let paymentQueue) :
+
+            paymentQueue.finishTransaction(transaction)
+        default:
+            break
+        }
+    }

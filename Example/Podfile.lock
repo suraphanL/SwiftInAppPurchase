@@ -1,0 +1,14 @@
+PODS:
+  - SwiftInAppPurchase (1.0.0)
+
+DEPENDENCIES:
+  - SwiftInAppPurchase (from `../`)
+
+EXTERNAL SOURCES:
+  SwiftInAppPurchase:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SwiftInAppPurchase: e6d19c8a9d102635cb62fd9de7291eb6f3f0669e
+
+COCOAPODS: 0.39.0

@@ -1,0 +1,6 @@
+framework module SwiftInAppPurchase {
+  umbrella header "SwiftInAppPurchase-umbrella.h"
+
+  export *
+  module * { export * }
+}

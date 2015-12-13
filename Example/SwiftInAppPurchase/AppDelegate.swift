@@ -1,13 +1,13 @@
 //
 //  AppDelegate.swift
-//  SwiftInAppPurchase
+//  IAPMaster
 //
-//  Created by Rawd on 12/13/2015.
-//  Copyright (c) 2015 Rawd. All rights reserved.
+//  Created by Suraphan on 11/29/2558 BE.
+//  Copyright © 2558 irawd. All rights reserved.
 //
 
 import UIKit
-
+import SwiftInAppPurchase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        SwiftInAppPurchase.sharedInstance.setProductionMode(false)
         return true
     }
 
