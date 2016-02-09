@@ -1,4 +1,5 @@
 # SwiftInAppPurchase
+Simply code In App Purchases with this Swift Framework
 
 [![CI Status](http://img.shields.io/travis/Rawd/SwiftInAppPurchase.svg?style=flat)](https://travis-ci.org/Rawd/SwiftInAppPurchase)
 [![Version](https://img.shields.io/cocoapods/v/SwiftInAppPurchase.svg?style=flat)](http://cocoapods.org/pods/SwiftInAppPurchase)
